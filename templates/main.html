@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Sentimental Analysis</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div style="float:left;">
+        <img id='python-nltk' src="{{url_for('static', filename='images/nltk.png')}}" alt="Python NLTK">
+    </div>
+    <div id='header'>
+        <h1 id='title'>Text Sentimental Analysis</h1>
+        <p id='main'>Natural language analysis utilizing Natural Toolkit (NLTK).</p>    
+    </div>
+    <form  enctype="multipart/form-data" method="POST">
+        <div id='input_text'> 
+            <h3>Input Text: </h3>
+            <textarea type="text" placeholder="Input Text" id="textarea_count" name="text_input" required minlength="1" maxlength="2000" size="10"></textarea>
+            <div style="float:left;">
+                <p>Total word count: <span id="display_count">0</span> words. Words left: <span id="word_left">2000</span></p> 
+            </div>
+            <div style="float:right;margin-right: 1%">
+                <div style="float:left;">
+                    <button style="float:left;"type="submit" id="analyze" class="btn btn-info">Analyze</button>  
+                </div>
+                <div style="float:right;">
+                <button type="button" class="btn btn-warning">Clear</button>
+                </div>
+            </div>     
+        </div>
+        <!--
+        <div id='output'>
+            <h3>Output: <span id="pos-neg">{sentiment}</span></h3>
+            <img id='graph' src="{{url_for('static', filename='images/graph.png')}}"/>          
+        </div>
+        -->
+    </form>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="{{url_for('static', filename='main.js')}}"></script>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
